@@ -4,15 +4,22 @@ import Modal from "./Modal";
 
 function UseState1() {
     const [modal, setModal] = useState(false);
+    const [items, setItems] = useState(true);
+
+    const handleClick = () => {
+        setItems(!items)
+        console.log(items)
+    }
+
     return(
         <div>
-            <div>
-                {modal ? 'Modal Aberto' : 'Modal Fechado'}
-            </div>
+            <button onClick={handleClick}>Clicar</button>
+            {items}
             <Modal modal={modal} setModal={setModal} />
-            <ButtonModal setModal={setModal}/>
+            <ButtonModal setModal={setModal} />
         </div>
     )
+
 }
 
 export default UseState1;

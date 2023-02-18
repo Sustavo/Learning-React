@@ -1,23 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function UseState1() {
-    const [contar, setContar] = useState(1);
-    const [itens, setItens] = useState(['Item 1']);
+    const [product, setProduct] = useState(null);
 
-    const handleClick = () => {
-        setContar(contar + 1)
-        setItens([...itens, 'Item' + (contar + 1)])
-    }
+    const fetchApi = async (valor) => {
+        try {
+            const response = await fetch(
+                `https://ranekapi.origamid.dev/json/api/produto/${valor}`
+            ).then((response) => response.json());
 
-    return(
-        <div>
-            {itens.map((item) => (
-                <li key={item}>{item}</li>
-            ))}
-            <button style={{padding: '10px'}} onClick={handleClick}>{contar}</button>
+            setProduct(response);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+
+
+    return (
+        <div style={{ display: "flex", flexDirection: "column" }}>
+            <button onClick={() => fetchApi('tablet')}>tablet</button>
+            <button onClick={() => fetchApi('smartphone')}>smartphone</button>
+            <button onClick={() => fetchApi('notebook')}>notebook</button>
+            {product && (
+                <ul>
+                    <li>{product.descricao}</li>
+                    <li>{product.id}</li>
+                    <li>{product.nome}</li>
+                    <li>{product.preco}</li>
+                    <li>{product.usuario}</li>
+                </ul>
+            )}
         </div>
-    )
-
+    );
 }
 
 export default UseState1;

@@ -6,7 +6,7 @@ export default function UseRef1() {
     const inputElement = useRef();
     
     const handleClick = () => {
-        if(input != '') {
+        if(input !== '') {
             setComentarios([...comentarios, input]);
             setInput('')
             inputElement.current.focus();

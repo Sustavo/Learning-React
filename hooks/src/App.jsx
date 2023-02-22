@@ -6,12 +6,15 @@ import UseRef1 from './components/useRef/UseRef1.jsx'
 import UseRef2 from './components/useRef/UseRef2.jsx'
 import UseMemo1 from './components/useMemo/UseMemo1.jsx'
 import UseCallBack from './components/useCallBack/UseCallBack.jsx'
+import UseContext1 from './components/useContext/UseContext1.jsx'
+import UseContextExercise from './components/useContextExercise/UseContextExercise.jsx'
+
 
 
 function App() {
   return (
     <div className="App">
-      <UseCallBack />
+      <UseContextExercise />
     </div>
   );
 }

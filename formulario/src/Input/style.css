@@ -1,0 +1,30 @@
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input {
+    width: 400px;
+    height: 40px;
+    border: 1px solid rgb(82, 82, 153);
+}
+
+button {
+    width: 250px;
+    height: 40px;
+    border: none;
+    background: rgb(56, 56, 126);
+    cursor: pointer
+}
+
+button:hover {
+    scale: 1.05;
+    background: rgb(27, 27, 63);
+    
+}

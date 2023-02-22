@@ -18,9 +18,9 @@ export default function ExerciseUE() {
     }
 
     useEffect(() => {
-        const storageValue = localStorage.getItem("produto").replace(/"/g, '');
+        const storageValue = localStorage.getItem("produto");
         if(storageValue) {
-            fetchData(storageValue)
+            fetchData(storageValue.replace(/"/g, ''))
         }
     },[])
 

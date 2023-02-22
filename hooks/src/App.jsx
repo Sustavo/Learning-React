@@ -12,7 +12,6 @@ import CustomHook from './components/customHooks/CustomHook.jsx'
 import CustomHook2 from './components/customHooks/CustomHook2.jsx'
 
 
-
 function App() {
   return (
     <div className="App">

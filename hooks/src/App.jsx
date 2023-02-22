@@ -8,13 +8,15 @@ import UseMemo1 from './components/useMemo/UseMemo1.jsx'
 import UseCallBack from './components/useCallBack/UseCallBack.jsx'
 import UseContext1 from './components/useContext/UseContext1.jsx'
 import UseContextExercise from './components/useContextExercise/UseContextExercise.jsx'
+import CustomHook from './components/customHooks/CustomHook.jsx'
+import CustomHook2 from './components/customHooks/CustomHook2.jsx'
 
 
 
 function App() {
   return (
     <div className="App">
-      <UseContextExercise />
+      <CustomHook2/>
     </div>
   );
 }

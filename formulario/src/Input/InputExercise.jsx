@@ -52,6 +52,7 @@ const formFields = [
 export default function InputExercise() {
   const [form, setForm] = useState(
     formFields.reduce((acc, field) => {
+      console.log(acc)
       return {
         ...acc,
         [field.id]: "",

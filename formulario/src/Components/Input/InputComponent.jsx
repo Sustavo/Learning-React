@@ -1,4 +1,4 @@
-export default function InputComponent({ id, label, value, setValue , ...props}) {
+export default function InputComponent({ id, label, value, onChange , ...props}) {
   return (
     <div>
       <label htmlFor={id}>{label}</label>
@@ -7,7 +7,7 @@ export default function InputComponent({ id, label, value, setValue , ...props})
         id={id}
         name={id}
         value={value}
-        onChange={({target}) => setValue(target.value)}
+        onChange={onChange}
         {...props}
       />
     </div>

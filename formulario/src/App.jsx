@@ -12,11 +12,12 @@ import SelectStructure from "./Components/Select/SelectStructure";
 import RadioStructure from "./Components/Radio/RadioStructure";
 import RadioComponent from "./Components/Radio/RadioComponent";
 import CheckBoxComponent from "./Components/CheckBox/CheckBoxComponent";
+import Validation from "./Components/Validation/Validation";
 
 function App() {
   return (
     <div className="App">
-      <CheckBoxComponent />
+      <Validation />
     </div>
   );
 }

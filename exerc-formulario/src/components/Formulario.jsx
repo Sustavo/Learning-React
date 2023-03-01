@@ -63,8 +63,28 @@ export default function Formulario() {
         setSelectedOption(null)
     }
 
+    if(optionValue === 4) {
+        return(
+            <div>
+                <p>Você acertou {counter} de 4</p>
+            </div>
+        )
+    }
 
     return(
-   
+        <div>
+            <h1>{perguntas[optionValue].pergunta}</h1>
+            <form onSubmit={handleSubmit}>
+                <ul>
+                    {perguntas[optionValue].options.map((option, index) => (
+                        <li key={index}>
+                            <input type="radio" name="option" value={option} onChange={handleOptionChange} checked={selectedOption === option} />
+                            {option}
+                        </li>
+                    ))}
+                </ul>
+                <button disabled={!selectedOption} type="submit">Próxima</button>
+            </form>
+        </div>
     )
 }

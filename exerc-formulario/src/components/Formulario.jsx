@@ -36,7 +36,32 @@ const perguntas = [
   ];
 
 export default function Formulario() {
+    const [selectedOption, setSelectedOption] = useState(null);
+    const [counter, setCounter] = useState(0);
+    const [optionValue, setOptionValue] = useState(0);
 
+
+    const handleOptionChange = ({target}) => {
+        const newValue = target.value;
+
+        setSelectedOption((prevValue) => {
+            if (prevValue === newValue) {
+                return null;
+            } else {
+                return newValue;
+            }
+        })
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        if(selectedOption === perguntas[optionValue].resposta) {
+            setCounter((counter) => counter + 1)
+        } else {
+        }
+        setOptionValue((option) => option + 1);
+        setSelectedOption(null)
+    }
 
 
     return(

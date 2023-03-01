@@ -1,37 +1,17 @@
 import { useState } from "react";
 import Input from "../Input/InputComponent";
+import UseForm from "../../hooks/UseForm";
 
 export default function Validation() {
-  const [cep, setCep] = useState("");
-  const [error, setError] = useState(null);
+  const cep = UseForm('cep');
+  const email = UseForm('email');
+  const nome = UseForm('nome');
 
-  const validadeCep = (value) => {
-    if(value.length === 0) {
-      setError("preencha um valor")
-      return false;
-    } else if(!/^\d{5}-?\d{3}$/.test(value)) {
-      setError("preencha um CEP válido");
-      return false;
-    } else {
-      setError(null);
-      return true;
-    }
-  }
-
-  const handleBlur = ({target}) => {
-    validadeCep(target.value)
-  }
-
-  const handleChange = ({target}) => {
-    if(error) {
-      validadeCep(target.value)
-    }
-    setCep(target.value)
-  }
-
+  console.log(cep)
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    if(validadeCep(cep)) {
+    if(cep.validate() && email.validate() && nome.validate()) {
       console.log("Enviou");
     } else {
       console.log("não enviar")
@@ -41,16 +21,25 @@ export default function Validation() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+      <Input
+          type="text"
+          label="Nome"
+          id="nome"
+          {...nome}
+        />
         <Input
           type="text"
           label="CEP"
           id="cep"
           placeholder="00000-00"
-          value={cep}
-          onChange={handleChange}
-          onBlur={handleBlur}
+          {...cep}
         />
-        {error && <p>{error}</p>}
+        <Input
+          type="email"
+          label="Email"
+          id="email"
+          {...email}
+        />
         <button>Enviar</button>
       </form>
     </div>

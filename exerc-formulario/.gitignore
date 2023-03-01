@@ -21,10 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-#arrays
-arrays/node_modules
-arrays/
-
-exerc-formulario/node_modules
-
